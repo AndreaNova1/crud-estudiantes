@@ -22,16 +22,6 @@ Route::resource('/estudiante',\App\Http\Controllers\EstudianteController::class)
 //Guardar Datos Estudiantes
 Route::post('/save','EstudianteController@save')->name('save');
 //editar
-Route::get('/edit/{id}','EstudianteController@edit')->name('edit');
-
-//Route::get('/criptomoneda/form', 'MonedaController@formMoned');
-//Guardar Monedas
-
-//Eliminar Usuarios
-//Route::delete('/criptomoneda/delete/{id}','MonedaController@delete')->name('delete');
-//Formulario para editar usuarios
-//
-//Edicion de usuarios
-//Route::post('/criptomoneda/edit/{id}','MonedaController@edit')->name('edit');
-
+Route::get('index/edit/{id}','EstudianteController@edit')->name('edit');
+Route::delete('index/delete/{id}','EstudianteController@delete')->name('delete');
 

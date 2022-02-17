@@ -107,7 +107,7 @@ class EstudianteController extends Controller
         ]);
     }
     public function delete($id){
-        Moneda::destroy($id);
+        Estudiante::destroy($id);
 
         return back()->with('registroElimnado', 'registroEliminado');
     }

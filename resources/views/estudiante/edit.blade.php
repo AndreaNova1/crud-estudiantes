@@ -22,22 +22,22 @@
                     </div>
                 @endif
                 <div class="card">
-                    <form action="{{ route('edit', $estudiantes->id)}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('edit', $estudiante->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-header  text-center  p-4 mb-2 bg-info text-white">MODIFICAR REGISTRO</div>
 
                             <div class="mb-3">
                                 <label class="form-label">nombre</label>
-                                <input type="text" name="nombre" class="form-control border border-info" value="{{ $estudiantes->nombre }}">
+                                <input type="text" name="nombre" class="form-control border border-info" value="{{ $estudiante->nombre }}">
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">correo</label>
-                                <input type="text" name="correo" class="form-control border border-info" value="{{ $estudiantes->correo }}">
+                                <input type="text" name="correo" class="form-control border border-info" value="{{ $estudiante->correo }}">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">grado</label>
-                                <input type="text" name="grado" class="form-control border border-info" value="{{ $estudiantes->grado }}">
+                                <input type="text" name="grado" class="form-control border border-info" value="{{ $estudiante->grado }}">
                             </div>
 
                             <div class="row form-group">

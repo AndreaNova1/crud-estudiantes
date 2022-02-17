@@ -43,10 +43,16 @@
                             <td>{{$estudiante->grado}}</td>
                             <td>
                             <div class="btn-group">
-                                <form action="{{route('estudiante.edit', $estudiante->id)}}" method="GET">
+                                <form action="{{route('edit', $estudiante->id)}}" method="GET">
                                     @csrf
                                     <button type="submit"  class="btn btn-danger">
                                         <i class="fas fa-pencil-alt btn btn-primary mr-5"></i>
+                                    </button>
+                                </form>
+                                <form action="{{ route('delete', $estudiante->id) }}" method="POST">
+                                    @csrf @method('DELETE')
+                                    <button type="submit" onclick="return confirm('¿Desea eliminar el registro?')" class="btn btn-danger">
+                                        <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
 

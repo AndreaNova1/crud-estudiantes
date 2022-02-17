@@ -41,8 +41,18 @@
                             <td>{{$estudiante->nombre}}</td>
                             <td>{{$estudiante->correo}}</td>
                             <td>{{$estudiante->grado}}</td>
+                            <td>
+                            <div class="btn-group">
+                                <form action="{{route('estudiante.edit', $estudiante->id)}}" method="GET">
+                                    @csrf
+                                    <button type="submit"  class="btn btn-danger">
+                                        <i class="fas fa-pencil-alt btn btn-primary mr-5"></i>
+                                    </button>
+                                </form>
 
-                            <td><a href="{{route('estudiante.edit', $estudiante->id)}}" class="btn btn-warning btn-sm" Editar | Eliminar</td>
+
+                            </div>
+                            </td>
                         </tr>
                     @endforeach
                     @endif

@@ -68,7 +68,11 @@ class EstudianteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $estudiantes= Estudiante::findOrFail($id);
+
+        return view('estudiante.index', compact('estudiantes'));
+
+        return back()->with('usuarioModificado','Usuario Modificado');
     }
 
     /**

@@ -19,3 +19,15 @@ Route::get('/', function () {
 });
 
 Route::resource('/estudiante',\App\Http\Controllers\EstudianteController::class);
+//Formulario de Monedas
+//Route::get('/criptomoneda/form', 'MonedaController@formMoned');
+//Guardar Monedas
+//Route::post('/criptomoneda/save','MonedaController@save')->name('save');
+//Eliminar Usuarios
+//Route::delete('/criptomoneda/delete/{id}','MonedaController@delete')->name('delete');
+//Formulario para editar usuarios
+//Route::post('/criptomoneda/editMoneda/{id}','MonedaController@editMoneda')->name('editMoneda');
+//Edicion de usuarios
+//Route::post('/criptomoneda/edit/{id}','MonedaController@edit')->name('edit');
+
+

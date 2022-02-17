@@ -9,32 +9,65 @@
     <!-- Estilos de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <title>Gestion Estudiantes</title>
+    <title>INFORMACION ESTUDIANTIL</title>
 </head>
-
 <body>
-    <div class="container">;
-         <h4>Gestion de Estudiantes</h4>
+    <div class="container">
+         <h4>DATOS GENERALES</h4>
     <div class="row">
         <div class="col-xl-12">
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
 
-                    <th>opciones</th>
-                    <th>ID</th>
-                    <th>nombre</th>
-                    <th>correo</th>
-                    <th>grado</th>
-                    <th>foto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>           </td>
-                    <td>           </td>
-                    <td>           </td>
-                    <td>           </td>
-                    <td>           </td>
-                    <td>           </td>
+                        <th>ID</th>
+                        <th>nombre</th>
+                        <th>correo</th>
+                        <th>grado</th>
+                        <th>foto</th>
+                        <th>opciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if(count($estudiantes)<=0)
+                        <tr>
+                            <td colspan="8">No hay resultados </td>
+                        </tr>
+                    @else
+                    @foreach($estudiantes as $estudinte)
+                        <tr>
+                            <td>{{$estudiante->id}}</td>
+                            <td>{{$estudiante->nombre}}</td>
+                            <td>{{$estudiante->correo}}</td>
+                            <td>{{$estudiante->grado}}</td>
+                            <td>{{$estudiante->foto}}</td>
+                            <td>Editar|Eliminar</td>
+                        </tr>
+                    @endforeach
+                    @endif
+                    </tbody>
+                    {{$estudiantes->links()}}
+                </table>
+            </div>
+        </div>
+        <div class="col-xl-12">
+            <form action="{{route('estudiante.index')}}" method="get">
+                <div class="form-row">
+                    <div class="col-sm-4 my-1">
+                        <input type="text" class="form-control" name="texto" value="{{$texto}}">
+                    </div>
+                    <div class="col-auto my-1">
+                        <input type="submit" class="btn btn-primary" value="buscar">
+                    </div>
+                    <div class="col-auto my-1 ">
+                        <a href="{{route('estudiante.create')}}" class="btn btn-success">Crear</a>
+                    </div>
+                    <div class="col-auto my-1 ">
+                        <a href="{{ url('/') }}" class="btn btn-danger">Inicio</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+</body>
+</html>

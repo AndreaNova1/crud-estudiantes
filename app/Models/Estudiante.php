@@ -13,4 +13,5 @@ class Estudiante extends Model
     protected $fillable =[
         'nombre', 'correo', 'grado', 'foto'
     ];
+    public $timestamps = false;
 }

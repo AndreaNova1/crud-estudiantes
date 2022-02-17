@@ -24,35 +24,25 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"> <span class="sr-only"></span></a>
+                <ul class="navbar-nav mr-auto"> </ul>
+                    <li class="nav-link">
+                        <a  href=" {{ url('/estudiante') }}" class="btn btn-outline-btn bg-info text-white " type="submit">Tabla de Datos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
-                    </li>
-                    <ul class="navbar-nav">
-                        <li class="nav-link">
-                            <a  href=" {{ url('/estudiante') }}" class="btn btn-outline-btn bg-info text-white" type="submit">Tabla de Datos</a>
-                        </li>
-                    </ul>
-                   <li class="nav-link">
+                    <li class="nav-link">
                         <a  href=" {{ url('/estudiante/create') }}" class="btn btn-outline-btn bg-info text-white" type="submit">Creacion de Datos</a>
                     </li>
-                </ul>
             </div>
-        </nav>
-    <div class="container"> @yield('content')
+    </nav>
+    <div class="container mt-5"> @yield('content')
         <center>
-    <a class=" container  navbar-center" href="#">
-        <img src="https://umg.edu.gt/assets/umg.png" width="250" height="225" alt="">
-    </a>
-        <h1>Andrea Fernanda Nova López</h1>
-        <h1>Programación III</h1>
-        <h1>Registro de Estudiantes CRUD</h1>
-        </center>
-</div>
+             <a class=" container  navbar-center" href="#">
+                <img src="https://umg.edu.gt/assets/umg.png" width="250" height="225" alt="">
+            </a>
+                <h1>Andrea Fernanda Nova López</h1>
+                <h1>Programación III</h1>
+                <h1>Registro de Estudiantes CRUD</h1>
+                </center>
+    </div>
 </body>
 </html>

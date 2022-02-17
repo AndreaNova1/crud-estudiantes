@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>   //}Crear
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>FORMULARIO DE REGISTRO</title>
 </head>
-<body>
-    <div class="container">
+<body class="container bg-info text-white">
+
+    <div class="container col-xl-5 mt-5 bg-secondary text-white">
         <h4>REGISTRO DE ESTUDIANTES</h4>
         <div class="row">
-            <div class="col-xl-12">
+            <div class="col-xl-11">
                 <form action="{{route('estudiante.store')}}" method="post">
                     @csrf
                     <div class="form-group">
-                         <label for="nombres">Nombres</label>
+                         <label for="nombre">Nombres</label>
                          <input type="text" class="form-control" name="nombre" required maxlength="50">
                     </div>
                     <div class="form-group">
@@ -28,13 +29,9 @@
                     </div>
                     <div class="form-group">
                         <label for="grado">Grado</label>
-                        <input type="text" class="form-control" name="Grado" required maxlength="50">
+                        <input type="text" class="form-control" name="grado" required maxlength="50">
                     </div>
-                    <div class="form-group">
-                        <label for="foto">Foto</label>
-                        <input type="file" class="form-control" name="foto" required maxlength="25">
-                    </div>
-                    <div class="form-group">
+                    <div class="form-group mt-4">
                         <input type="submit" class="btn btn-primary" value="Guardar">
                         <input type="submit" class="btn btn-success" value="Cancelar">
                         <a href="{{ url('/') }}" class="btn btn-danger">Inicio</a>

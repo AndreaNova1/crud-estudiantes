@@ -16,10 +16,9 @@ class EstudianteController extends Controller
     {
         $texto=trim($request->get('texto'));
        $estudiantes=DB::table('estudiante')
-                        ->select('id', 'nombre', 'correo', 'grado', 'foto')
+                        ->select('id', 'nombre', 'correo', 'grado')
                         ->where('nombre','LIKE', '%' .$texto. '%')
                         ->orWhere('correo', 'LIKE', '%' .$texto. '%')
-                        ->orderBy('apellido', 'asc')
                         ->paginate(10);
        return view ('estudiante.index', compact('estudiantes', 'texto'));
     }
@@ -43,10 +42,9 @@ class EstudianteController extends Controller
     public function store(Request $request)
     {
         $estudiante=new Estudiante;
-        $estudiante->nombres=$request->input('nombres');
+        $estudiante->nombre=$request->input('nombre');
         $estudiante->correo=$request->input('correo');
         $estudiante->grado=$request->input('grado');
-        $estudiante->foto=$request->input('foto');
         $estudiante->save();
         return redirect()->route('estudiante.index');
     }
@@ -95,4 +93,19 @@ class EstudianteController extends Controller
     {
         //
     }
+
+    public function save(Request $request)
+    {
+        $validator = $this->validate($request, [
+            'nombre' => 'required',
+            'correo' => 'required|string|max:75',
+            'grado' => 'required',
+        ]);
+    }
+    public function delete($id){
+        Moneda::destroy($id);
+
+        return back()->with('registroElimnado', 'registroEliminado');
+    }
+
 }

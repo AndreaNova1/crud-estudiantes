@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>INFORMACION ESTUDIANTIL</title>
 </head>
-<body>
-    <div class="container">
+<body class="container bg-info text-white">
+<div class="container col-xl-7 mt-5 bg-secondary text-white">
          <h4>DATOS GENERALES</h4>
     <div class="row">
         <div class="col-xl-12">
@@ -25,7 +25,7 @@
                         <th>nombre</th>
                         <th>correo</th>
                         <th>grado</th>
-                        <th>foto</th>
+
                         <th>opciones</th>
                     </tr>
                     </thead>
@@ -35,14 +35,14 @@
                             <td colspan="8">No hay resultados </td>
                         </tr>
                     @else
-                    @foreach($estudiantes as $estudinte)
+                    @foreach($estudiantes as $estudiante)
                         <tr>
                             <td>{{$estudiante->id}}</td>
                             <td>{{$estudiante->nombre}}</td>
                             <td>{{$estudiante->correo}}</td>
                             <td>{{$estudiante->grado}}</td>
-                            <td>{{$estudiante->foto}}</td>
-                            <td>Editar|Eliminar</td>
+
+                            <td><a href="{{route('estudiante.edit', $estudiante->id)}}" class="btn btn-warning btn-sm" Editar | Eliminar</td>
                         </tr>
                     @endforeach
                     @endif
